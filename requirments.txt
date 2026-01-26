@@ -1,0 +1,3 @@
+#liste des librairies
+streamlit
+pandas
