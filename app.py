@@ -19,7 +19,7 @@ choix = st.sidebar.radio("Sommaire", slides)
 if choix == "1. Intro":
     st.title(contenu.titre_intro)  # On va chercher le titre dans l'autre fichier
     
-    st.image("Presentation_1.png")
+    st.image("images/Presentation_1.png")
 
 # --- SLIDE 2 ---
 elif choix == "2. Ailes":
@@ -27,7 +27,7 @@ elif choix == "2. Ailes":
     
     col1, col2 = st.columns(2)
     with col1:
-        st.image("Gothic Delta Wings.jpeg")
+        st.image("images/Gothic Delta Wings.jpeg")
     with col2:
         st.markdown(contenu.details_ailes)
 
