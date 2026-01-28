@@ -1,6 +1,6 @@
 # Ici c'est le texte de l'exploser
 # Le fichier textes.py (Contenu pur)
-fichier: contenu.py
+# fichier: contenu.py
 
 # --- Slide 1: Introduction ---
 titre_principal = "The CONCORDE"

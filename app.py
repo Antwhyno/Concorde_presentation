@@ -175,8 +175,8 @@ elif selection == "The Future":
 
 elif selection == "Vocabulary":
     st.header(titre_vocab)
-    for mot, def in vocabulaire.items():
-        st.markdown(f"**{mot}** : {def}")
+    for mot, definition in vocabulaire.items():
+        st.markdown(f"**{mot}** : {definition}")
 st.title("Sources & Bibliographie")
 
 for s in contenu.liste_sources:
