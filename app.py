@@ -126,17 +126,18 @@ elif selection == "The Droop Nose": # (ou "The Nose" selon ton menu)
     st.write("---") # Une ligne de séparation
     st.subheader("Mechanism Demonstration")
     # Assure-toi que le nom du fichier est EXACTEMENT le même (majuscules/espaces)
-    st.video("Concorde droop nose and visor test.mp4")
+    st.video("images/Concorde droop nose and visor test.mp4")
 
 elif selection == "Fuel Management":
     st.header(titre_fuel)
     st.warning(texte_fuel)
-    st.image("fuel_system.jpg")
+    st.image("images/Fuel.png")
+    st.image("images/Fuel2.png")
 
 # --- NOUVELLE PAGE : THE END ---
 elif selection == "The End of Concorde":
     st.header(titre_fin)
-    st.subheader(f"😢 {sous_titre_fin}")
+    st.subheader(f"{sous_titre_fin}")
     
     col1, col2 = st.columns(2)
     with col1:
@@ -145,7 +146,9 @@ elif selection == "The End of Concorde":
             
     with col2:
         # Pense à mettre une image du crash ou du dernier vol ici
-        st.image("concorde_end.jpg", caption="The final flight")
+        st.image("images/crash3.jpg", caption="crash in Gonesse")
+        st.image("images/crash2.jpeg")
+        st.image("images/crash.jpeg")
 
 # --- NOUVELLE PAGE : FUTURE ---
 elif selection == "The Future":
