@@ -152,20 +152,33 @@ elif selection == "Fuel Management":
         st.image("images/Fuel2.png",use_container_width=True)
 
 # --- NOUVELLE PAGE : THE END ---
+# --- NOUVELLE PAGE : THE END ---
 elif selection == "The End of Concorde":
     st.header(titre_fin)
-    st.subheader(f"{sous_titre_fin}")
+    st.subheader(f"😢 {sous_titre_fin}")
     
-    col1, col2 = st.columns(2)
+    # On fait des colonnes inégales : le texte à gauche (40%), les images à droite (60%)
+    col1, col2 = st.columns([1, 1.5]) 
+    
     with col1:
+        # AMÉLIORATION TEXTE : Un seul bloc rouge contenant une liste propre
+        st.error("### Main Causes:") # Un petit titre dans la boîte rouge
+        text_causes = ""
         for cause in causes_fin:
-            st.error(cause) # st.error met le texte en rouge
+            text_causes += f"- {cause}\n" # On construit une liste Markdown
+        st.markdown(text_causes)
             
     with col2:
-        # Pense à mettre une image du crash ou du dernier vol ici
-        st.image("images/crash3.jpg", caption="crash in Gonesse")
-        st.image("images/crash2.jpeg")
-        st.image("images/crash.jpeg")
+        # AMÉLIORATION IMAGES : Disposition en mosaïque
+        # 1. La grande image principale (Le décollage en feu)
+        st.image("images/crash3.jpg", caption="Crash in Gonesse - July 2000", use_container_width=True)
+        
+        # 2. Les deux autres images côte à côte juste en dessous
+        sub_c1, sub_c2 = st.columns(2)
+        with sub_c1:
+            st.image("images/crash2.jpeg", use_container_width=True)
+        with sub_c2:
+            st.image("images/crash.jpeg", use_container_width=True)
 
 # --- NOUVELLE PAGE : FUTURE ---
 elif selection == "The Future":
@@ -192,7 +205,15 @@ elif selection == "The Future":
 
 elif selection == "Vocabulary":
     st.header(titre_vocab)
+    
+    # On ajoute un peu d'espace avant de commencer
+    st.write("") 
+    
     for mot, definition in vocabulaire.items():
-        st.markdown(f"**{mot}** : {definition}")
+        # Les "##" au début disent à Streamlit : "Affiche ça comme un gros titre"
+        st.markdown(f"## **{mot}** : {definition}")
+        
+        # Une petite ligne de séparation pour faire propre entre chaque mot
+        st.markdown("---")
 
 

@@ -97,7 +97,15 @@ vocabulaire = {
     "Quantum leap": "Avancée révolutionnaire",
     "Groundbreaking": "Innovant / Révolutionnaire",
     "Afterburner": "Post-combustion",
-    "Heat-shield": "Bouclier thermique"
+    "Heat-shield": "Bouclier thermique",
+    "Harsh": "Dure",
+    "intakes": "entrées d'air",
+    "Drag": "Trainée",
+    "thrust": "propulsion/pousée",
+    "Lift": "portance",
+    "Propeller": "Helices",
+    "Thirsty": "Gourmand, qui consomme beaucoup d'énergie",
+    ""
 }
 
 # Tu peux même mettre tes sources ici
