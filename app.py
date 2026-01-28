@@ -36,54 +36,70 @@ selection = st.sidebar.radio("Go to:", pages)
 if selection == "Home":
     st.title(titre_principal)
     st.write(f"**{auteur}**")
-    st.image("concorde_home.jpg", use_container_width=True) # Slide 1
+    st.image("images/Presentation_1.png", use_container_width=True) # Slide 1
 
 elif selection == "The Beginning":
     st.header(titre_debut)
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.write(texte_debut)
+        st.image("images/Sud-Aviation-1961-P1.jpeg")
     with col2:
-        st.image("logos_slide2.jpg") # Slide 2
+        st.image("images/british-aircraft-corporation.png") # Slide 2
+    with col3:
+        st.image("images/concorde_treaty.jpg")
 
 elif selection == "The Supersonic Race":
     st.header(titre_course)
     st.write(texte_course)
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
-        st.image("tu144.jpg", caption="Tupolev Tu-144")
+        st.image("images/Tupolev_Tu-144.jpg", caption="Tupolev Tu-144")
     with col2:
-        st.image("boeing2707.jpg", caption="Boeing 2707")
+        st.image("images/boeing2707.jpg", caption="Boeing 2707")
+    with col3:
+        st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
 
 elif selection == "Key Numbers":
     st.header(titre_chiffres)
     st.info(texte_chiffres)
-    st.image("first_flight.jpg", caption="First flight 1969")
+    st.image("images/5concordes.gif")
 
 elif selection == "Performance":
     st.header(titre_perf)
     c1, c2 = st.columns(2)
     with c1:
-        st.subheader("🚀 Concorde")
+        st.subheader("Concorde")
         st.metric("Speed", stats_concorde["Speed"])
         st.metric("Altitude", stats_concorde["Altitude"])
     with c2:
-        st.subheader("✈️ Normal Plane")
+        st.subheader("Normal Plane")
         st.metric("Speed", stats_normal["Speed"])
         st.metric("Altitude", stats_normal["Altitude"])
 
-elif selection == "The Wings":
+elif selection == "The Gothic Delta Wing":
     st.header(titre_ailes)
-    c1, c2 = st.columns([1, 2])
+    c1, c2, c3 = st.columns([1, 2, 1])
     with c1:
         st.write(texte_ailes)
     with c2:
-        st.image("delta_wing.jpg")
+        st.image("images/Gothic Delta Wings3.jpg")
+    with c3:
+        st.image("images/Gothic Delta Wings2.jpeg")
+        st.image("images/Gothic Delta Wings4.jpeg")
 
 elif selection == "The Engines":
-    st.header(titre_moteurs)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.header(titre_moteurs)
     st.write(texte_moteurs)
-    st.image("engine.jpg")
+    with col2:
+        st.image("images/intakes.png")
+    with col3:
+        st.image("images/Olympus 593 Engines_intakes.avif")
+    with col4:
+        st.image("images/Rolls-Royce-Snecma_Olympus_-_Musée_Safran.jpg")
 
 elif selection == "Fly by Wire":
     st.header(titre_fbw)
@@ -91,17 +107,26 @@ elif selection == "Fly by Wire":
     with c1:
         st.write(texte_fbw)
     with c2:
-        st.image("fadec.jpg")
+        st.image("images/FADEC.jpg")
 
-elif selection == "The Nose":
+# --- SLIDE 9 : THE NOSE ---
+elif selection == "The Droop Nose": # (ou "The Nose" selon ton menu)
     st.header(titre_nez)
-    tab1, tab2 = st.tabs(["Landing", "Cruise"])
+    
+    # 1. Les textes explicatifs dans les onglets
+    tab1, tab2 = st.tabs(["Landing/Take-off", "Supersonic Cruise"])
+    
     with tab1:
         st.write(texte_nez_baisse)
-        st.image("nose_down.jpg")
+        
     with tab2:
         st.write(texte_nez_haut)
-        st.image("nose_up.jpg")
+
+    # 2. La vidéo de démonstration (en dessous pour être toujours visible)
+    st.write("---") # Une ligne de séparation
+    st.subheader("Mechanism Demonstration")
+    # Assure-toi que le nom du fichier est EXACTEMENT le même (majuscules/espaces)
+    st.video("Concorde droop nose and visor test.mp4")
 
 elif selection == "Fuel Management":
     st.header(titre_fuel)
