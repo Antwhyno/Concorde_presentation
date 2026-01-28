@@ -17,13 +17,11 @@ choix = st.sidebar.radio("Sommaire", slides)
 
 # --- SLIDE 1 ---
 if choix == "1. Intro":
-    st.title(contenu.titre_intro)  # On va chercher le titre dans l'autre fichier
-    
     st.image("images/Presentation_1.png")
 
 # --- SLIDE 2 ---
 elif choix == "2. Ailes":
-    st.subheader(contenu.titre_ailes)
+    st.title(contenu.titre_ailes)
     
     col1, col2 = st.columns(2)
     with col1:
