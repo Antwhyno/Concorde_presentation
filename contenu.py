@@ -104,8 +104,7 @@ vocabulaire = {
     "thrust": "propulsion/pousée",
     "Lift": "portance",
     "Propeller": "Helices",
-    "Thirsty": "Gourmand, qui consomme beaucoup d'énergie",
-    ""
+    "Thirsty": "Gourmand, qui consomme beaucoup d'énergie"
 }
 
 # Tu peux même mettre tes sources ici
