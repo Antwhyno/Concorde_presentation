@@ -1,7 +1,12 @@
 # app.py
 
 import streamlit as st
-import contenu  # <--- C'est ici que la magie opère !
+
+#importation des textes
+import contenu 
+
+#importation des sources
+from contenu import liste_sources
 
 # Configuration
 st.set_page_config(page_title="Concorde NSI", layout="wide")
@@ -29,3 +34,7 @@ elif choix == "2. Ailes":
         st.image("images/aile_delta.jpg")
     with col2:
         st.markdown(contenu.details_ailes)
+
+
+for s in contenu.liste_sources:
+    st.write(f"📖 {s}")

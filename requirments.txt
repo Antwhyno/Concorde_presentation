@@ -1,3 +1,10 @@
 #liste des librairies
+
+#pour l'application web
 streamlit
+
+#pour la manipulation des données
 pandas
+
+#pour la manipulation des images, il faut l'importer sous la forme PIL
+pillow 

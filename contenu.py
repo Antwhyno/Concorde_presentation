@@ -19,7 +19,12 @@ details_ailes = """
 """
 
 # Tu peux même mettre tes sources ici
-liste_sources = {
-    "Histoire du Concorde": "Wikipedia",
-    "Vidéo Crash": "YouTube - INA"
-}
+liste_sources = ["L'HISTOIRE DU CONCORDE - Le Concorde - Un Avion Révolutionnaire",
+"L’histoire du Concorde : l’avion supersonique de légende – Aeo Aviation ",
+"L'avion de la Concorde | Ciclic ",
+"Concorde - Le Concorde en quelques dates ",
+"Histoire : 3 mars 1969 au 26 septembre 1973 - APCOS ",
+"Front Page - APCOS ",
+"La naissance de l’aviation commerciale : histoire et évolution – Aeo Aviation ",
+
+]
