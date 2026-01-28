@@ -13,7 +13,7 @@ from contenu import liste_sources
 st.set_page_config(page_title="Concorde story", layout="wide")
 
 # --- MENU LATÉRAL ---
-st.sidebar.title("Sommaire")
+st.sidebar.title("Summary")
 pages = [
     "Home", 
     "The Beginning", 
@@ -93,7 +93,7 @@ elif selection == "The Gothic Delta Wings":
 
 elif selection == "The Engines":
     
-    col1, col2, col3, col4 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.header(titre_moteurs)
     st.write(texte_moteurs)
@@ -205,15 +205,24 @@ elif selection == "The Future":
 
 elif selection == "Vocabulary":
     st.header(titre_vocab)
+    st.write("") # Un peu d'espace
     
-    # On ajoute un peu d'espace avant de commencer
-    st.write("") 
+    # On crée 2 colonnes
+    col1, col2 = st.columns(2)
     
-    for mot, definition in vocabulaire.items():
-        # Les "##" au début disent à Streamlit : "Affiche ça comme un gros titre"
-        st.markdown(f"## **{mot}** : {definition}")
+    # On transforme le dictionnaire en liste pour pouvoir compter (0, 1, 2, 3...)
+    items = list(vocabulaire.items())
+    
+    for index, (mot, definition) in enumerate(items):
+        # Si le numéro est PAIR (0, 2, 4...), on met dans la colonne de GAUCHE
+        if index % 2 == 0:
+            with col1:
+                st.markdown(f"## **{mot}** : {definition}")
+                st.markdown("---") # Ligne de séparation
         
-        # Une petite ligne de séparation pour faire propre entre chaque mot
-        st.markdown("---")
-
+        # Si le numéro est IMPAIR (1, 3, 5...), on met dans la colonne de DROITE
+        else:
+            with col2:
+                st.markdown(f"## **{mot}** : {definition}")
+                st.markdown("---")
 
