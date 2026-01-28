@@ -12,6 +12,20 @@ from contenu import liste_sources
 # Configuration
 st.set_page_config(page_title="Concorde story", layout="wide")
 
+# --- Taille des textes ---
+st.markdown("""
+<style>
+    html, body, p, li, .stMarkdown {
+        font-size: 24px !important;
+    }
+    h1 { font-size: 60px !important; }
+    h2 { font-size: 45px !important; }
+    h3 { font-size: 35px !important; }
+    .stAlert { font-size: 24px !important; }
+    .stImageCaption { font-size: 18px !important; }
+</style>
+""", unsafe_allow_html=True)
+
 # --- MENU LATÉRAL ---
 st.sidebar.title("Summary")
 pages = [
