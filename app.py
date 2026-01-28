@@ -153,9 +153,25 @@ elif selection == "The End of Concorde":
 # --- NOUVELLE PAGE : FUTURE ---
 elif selection == "The Future":
     st.header(titre_futur)
-    st.success(texte_futur) # st.success met le texte en vert
-    # Tu peux mettre une image d'un projet futur (ex: Overture de Boom Supersonic)
-    st.image("future_supersonic.jpg", caption="The next generation?")
+    
+    # Zone de texte en haut
+    st.info(texte_futur) 
+
+    # Création de deux colonnes inégales (La gauche est plus large)
+    col1, col2 = st.columns([1.5, 1])
+
+    with col1:
+        # Grande image : L'avion en vol (Design concept)
+        st.image("Lockheed-Martin-Quesst-X-59.jpg", caption="The X-59 QueSST Concept", use_container_width=True)
+
+    with col2:
+        # Petite colonne de droite : Le Logo puis le test moteur
+        c1, c2 = st.columns([1, 2]) # On centre un peu le logo
+        with c2:
+            st.image("NASA.png", width=120) # Logo NASA un peu réduit
+            
+        st.write("") # Juste un petit espace vide
+        st.image("Nasa_X59.jpg", caption="Tail Engine Test", use_container_width=True)
 
 elif selection == "Vocabulary":
     st.header(titre_vocab)
