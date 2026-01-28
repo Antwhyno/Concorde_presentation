@@ -1,5 +1,5 @@
 # The Concorde
-
+** py -m streamlit run app.py **
 ### Apprentissage des bases streamlit:
 
 st : C'est le petit nom (l'alias) que tu as donné à Streamlit au début de ton fichier (import streamlit as st). Ça dit à Python : "Hé, utilise l'outil Streamlit".
