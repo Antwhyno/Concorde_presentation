@@ -35,6 +35,9 @@ elif choix == "2. Ailes":
     with col2:
         st.markdown(contenu.details_ailes)
 
+# --- SLIDE sources ---
+
+st.title("Sources & Bibliographie")
 
 for s in contenu.liste_sources:
     st.write(f"📖 {s}")
