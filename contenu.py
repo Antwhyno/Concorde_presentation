@@ -3,7 +3,7 @@
 # Crée ce fichier et mets-y tout le contenu de ton document OpenOffice, mais sous forme de variables Python.
 
 # Slide 1
-titre_intro = "THE CONCORDE: A Legend"
+
 texte_contexte = """
 C'était la fin des années 50, en pleine Guerre Froide.
 La course à la technologie était lancée.

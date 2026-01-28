@@ -23,7 +23,7 @@ if choix == "1. Intro":
 
 # --- SLIDE 2 ---
 elif choix == "2. Ailes":
-    st.title(contenu.titre_ailes)
+    st.subheader(contenu.titre_ailes)
     
     col1, col2 = st.columns(2)
     with col1:
