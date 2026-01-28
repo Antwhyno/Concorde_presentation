@@ -20,10 +20,10 @@ pages = [
     "The Supersonic Race", 
     "Key Numbers", 
     "Performance", 
-    "The Wings", 
+    "The Gothic Delta Wings", 
     "The Engines", 
     "Fly by Wire", 
-    "The Nose", 
+    "The Droop Nose", 
     "Fuel Management",
     "The End of Concorde",  # NOUVEAU
     "The Future",           # NOUVEAU
@@ -54,11 +54,12 @@ elif selection == "The Supersonic Race":
     st.write(texte_course)
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.image("images/Tupolev_Tu-144.jpg", caption="Tupolev Tu-144")
-    with col2:
-        st.image("images/boeing2707.jpg", caption="Boeing 2707")
-    with col3:
+        st.image("images/Tupolev Tu-144.jpg", caption="Tupolev Tu-144")
         st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
+    with col2:
+        st.image("images/boeing-2707.jpg", caption="Boeing 2707")
+        st.image("images/Boeing 2707.jpeg", caption="Boeing 2707")
+        
 
 elif selection == "Key Numbers":
     st.header(titre_chiffres)
@@ -72,12 +73,14 @@ elif selection == "Performance":
         st.subheader("Concorde")
         st.metric("Speed", stats_concorde["Speed"])
         st.metric("Altitude", stats_concorde["Altitude"])
+        st.image("images/ConcordeAileface.png", caption="Concorde")
     with c2:
         st.subheader("Normal Plane")
         st.metric("Speed", stats_normal["Speed"])
         st.metric("Altitude", stats_normal["Altitude"])
+        st.image("images/comet.png", caption="Normal Plane")
 
-elif selection == "The Gothic Delta Wing":
+elif selection == "The Gothic Delta Wings":
     st.header(titre_ailes)
     c1, c2, c3 = st.columns([1, 2, 1])
     with c1:
@@ -90,7 +93,7 @@ elif selection == "The Gothic Delta Wing":
 
 elif selection == "The Engines":
     
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns(3)
     with col1:
         st.header(titre_moteurs)
     st.write(texte_moteurs)
@@ -98,18 +101,24 @@ elif selection == "The Engines":
         st.image("images/intakes.png")
     with col3:
         st.image("images/Olympus 593 Engines_intakes.avif")
-    with col4:
         st.image("images/Rolls-Royce-Snecma_Olympus_-_Musée_Safran.jpg")
+        
 
 elif selection == "Fly by Wire":
     st.header(titre_fbw)
-    c1, c2 = st.columns(2)
+    
+    # Tu peux changer [1, 1] par [1, 1.5] si tu veux que l'image soit encore plus large que le texte
+    c1, c2 = st.columns([1, 1.2]) 
+    
     with c1:
-        st.write(texte_fbw)
+        # Les "###" devant la variable transforment le texte en "Titre 3" (plus gros)
+        st.markdown(f"### {texte_fbw}")
+        
     with c2:
-        st.image("images/FADEC.jpg")
+        # use_container_width=True oblige l'image à s'étirer au maximum
+        st.image("images/FADEC.jpg", use_container_width=True)
 
-# --- SLIDE 9 : THE NOSE ---
+# --- SLIDE 9 : THE droop NOSE ---
 elif selection == "The Droop Nose": # (ou "The Nose" selon ton menu)
     st.header(titre_nez)
     
@@ -130,9 +139,17 @@ elif selection == "The Droop Nose": # (ou "The Nose" selon ton menu)
 
 elif selection == "Fuel Management":
     st.header(titre_fuel)
-    st.warning(texte_fuel)
-    st.image("images/Fuel.png")
-    st.image("images/Fuel2.png")
+    
+    c1, c2 = st.columns([1, 1.2]) 
+    
+    with c1:
+        # Les "###" devant la variable transforment le texte en "Titre 3" (plus gros)
+        st.markdown(f"### {texte_fuel}")
+        
+    with c2:
+        # use_container_width=True oblige l'image à s'étirer au maximum
+        st.image("images/Fuel.png")
+        st.image("images/Fuel2.png",use_container_width=True)
 
 # --- NOUVELLE PAGE : THE END ---
 elif selection == "The End of Concorde":
@@ -162,22 +179,20 @@ elif selection == "The Future":
 
     with col1:
         # Grande image : L'avion en vol (Design concept)
-        st.image("Lockheed-Martin-Quesst-X-59.jpg", caption="The X-59 QueSST Concept", use_container_width=True)
+        st.image("images/Lockheed-Martin-Quesst-X-59.jpeg", caption="The X-59 QueSST Concept", use_container_width=True)
 
     with col2:
         # Petite colonne de droite : Le Logo puis le test moteur
         c1, c2 = st.columns([1, 2]) # On centre un peu le logo
         with c2:
-            st.image("NASA.png", width=120) # Logo NASA un peu réduit
+            st.image("images/NASA.png", width=120) # Logo NASA un peu réduit
             
         st.write("") # Juste un petit espace vide
-        st.image("Nasa_X59.jpg", caption="Tail Engine Test", use_container_width=True)
+        st.image("images/Nasa_X59.jpg", caption="Tail Engine Test", use_container_width=True)
 
 elif selection == "Vocabulary":
     st.header(titre_vocab)
     for mot, definition in vocabulaire.items():
         st.markdown(f"**{mot}** : {definition}")
-st.title("Sources & Bibliographie")
 
-for s in contenu.liste_sources:
-    st.write(f"📖 {s}")
+
