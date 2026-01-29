@@ -9,6 +9,8 @@ from contenu import *
 #importation des sources
 from contenu import liste_sources
 
+#controle des fleches pour passer les diapos
+import streamlit.components.v1 as components
 # Configuration
 st.set_page_config(page_title="Concorde story", layout="wide")
 
@@ -25,6 +27,35 @@ st.markdown("""
     .stImageCaption { font-size: 18px !important; }
 </style>
 """, unsafe_allow_html=True)
+
+#controle des fleches pour passer les diapos
+def navigation_clavier():
+    components.html("""
+    <script>
+    const doc = window.parent.document;
+    doc.addEventListener('keydown', function(e) {
+        // Si Flèche Droite -> On cherche le bouton "Next"
+        if (e.key === 'ArrowRight') {
+            const buttons = doc.querySelectorAll('button');
+            buttons.forEach(btn => {
+                if (btn.innerText.includes('Next ➡️')) {
+                    btn.click();
+                }
+            });
+        }
+        // Si Flèche Gauche -> On cherche le bouton "Prev"
+        if (e.key === 'ArrowLeft') {
+            const buttons = doc.querySelectorAll('button');
+            buttons.forEach(btn => {
+                if (btn.innerText.includes('⬅️ Prev')) {
+                    btn.click();
+                }
+            });
+        }
+    });
+    </script>
+    """, height=0, width=0)
+
 
 # --- MENU LATÉRAL & NAVIGATION ---
 st.sidebar.title("Summary")
@@ -269,3 +300,4 @@ elif selection == "Vocabulary":
                 st.markdown(f"## **{mot}** : {definition}")
                 st.markdown("---")
 
+navigation_clavier()
