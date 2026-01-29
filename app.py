@@ -125,20 +125,24 @@ elif selection == "The Beginning":
 
 elif selection == "The Supersonic Race":
     st.header(titre_course)
-    st.write(texte_course)
+    
     col1, col2, col3 = st.columns(3)
     with col1:
+        st.write(texte_course)
         st.image("images/Tupolev Tu-144.jpg", caption="Tupolev Tu-144")    
     with col2:
         st.image("images/boeing-2707.jpg", caption="Boeing 2707")
     with col3:
-        st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
         st.image("images/Boeing 2707.jpeg", caption="Boeing 2707")
+        st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
+        
         
 
 elif selection == "Key Numbers":
+    
     st.header(titre_chiffres)
-    st.info(texte_chiffres)
+    st.markdown(f"## {texte_chiffres}")
+    #st.info(texte_chiffres)
     st.image("images/5concordes.gif")
 
 elif selection == "Performance":
@@ -185,13 +189,13 @@ elif selection == "The Engines":
         
 
 elif selection == "Fly by Wire":
-    st.header(titre_fbw)
     
     # Tu peux changer [1, 1] par [1, 1.5] si tu veux que l'image soit encore plus large que le texte
     c1, c2 = st.columns([1, 1.2]) 
     
     with c1:
         # Les "###" devant la variable transforment le texte en "Titre 3" (plus gros)
+        st.header(titre_fbw)
         st.markdown(f"### {texte_fbw}")
         
     with c2:
