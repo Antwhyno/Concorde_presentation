@@ -12,7 +12,7 @@ from contenu import liste_sources
 #controle des fleches pour passer les diapos
 import streamlit.components.v1 as components
 # Configuration
-st.set_page_config(page_title="Concorde story", layout="wide")
+st.set_page_config(page_title="Concorde story by Antoine", layout="wide")
 
 # --- Taille des textes ---
 st.markdown("""
