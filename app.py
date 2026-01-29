@@ -26,8 +26,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- MENU LATÉRAL ---
+# --- MENU LATÉRAL & NAVIGATION ---
 st.sidebar.title("Summary")
+
+# 1. On définit la liste des pages
 pages = [
     "Home", 
     "The Beginning", 
@@ -39,17 +41,44 @@ pages = [
     "Fly by Wire", 
     "The Droop Nose", 
     "Fuel Management",
-    "The End of Concorde",  # NOUVEAU
-    "The Future",           # NOUVEAU
+    "The End of Concorde",
+    "The Future",
     "Vocabulary"
 ]
-selection = st.sidebar.radio("Go to:", pages)
 
+# 2. On initialise la page actuelle dans la mémoire si elle n'existe pas
+if "page_actuelle" not in st.session_state:
+    st.session_state.page_actuelle = pages[0]
+
+# 3. Fonction pour changer de page (Précédent / Suivant)
+def changer_page(delta):
+    # On cherche où on est dans la liste (ex: index 0, 1, 2...)
+    index_actuel = pages.index(st.session_state.page_actuelle)
+    # On calcule le nouvel index (le % len(pages) permet de boucler à la fin)
+    nouveau_index = (index_actuel + delta) % len(pages)
+    # On met à jour la mémoire
+    st.session_state.page_actuelle = pages[nouveau_index]
+
+# 4. On affiche les boutons de navigation en haut du menu
+col_prev, col_next = st.sidebar.columns(2)
+
+if col_prev.button("⬅️ Prev"):
+    changer_page(-1)
+    st.rerun() # Force le rechargement immédiat
+
+if col_next.button("Next ➡️"):
+    changer_page(1)
+    st.rerun()
+
+# 5. Le Menu Radio (connecté à la mémoire via la clé 'page_actuelle')
+selection = st.sidebar.radio(
+    "Go to:", 
+    pages, 
+    key="page_actuelle" # C'est ici que la magie opère : le bouton radio suit la mémoire
+)
 # --- PAGES ---
 
 if selection == "Home":
-    st.title(titre_principal)
-    st.write(f"**{auteur}**")
     st.image("images/Presentation_1.png", use_container_width=True) # Slide 1
 
 elif selection == "The Beginning":
