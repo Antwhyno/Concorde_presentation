@@ -128,10 +128,11 @@ elif selection == "The Supersonic Race":
     st.write(texte_course)
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.image("images/Tupolev Tu-144.jpg", caption="Tupolev Tu-144")
-        st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
+        st.image("images/Tupolev Tu-144.jpg", caption="Tupolev Tu-144")    
     with col2:
         st.image("images/boeing-2707.jpg", caption="Boeing 2707")
+    with col3:
+        st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
         st.image("images/Boeing 2707.jpeg", caption="Boeing 2707")
         
 
@@ -143,16 +144,21 @@ elif selection == "Key Numbers":
 elif selection == "Performance":
     st.header(titre_perf)
     c1, c2 = st.columns(2)
+    
     with c1:
         st.subheader("Concorde")
         st.metric("Speed", stats_concorde["Speed"])
         st.metric("Altitude", stats_concorde["Altitude"])
-        st.image("images/ConcordeAileface.png", caption="Concorde")
+        # AJOUT DE use_container_width=True
+        st.image("images/ConcordeAileface.png", caption="Concorde", use_container_width=True)
+        
     with c2:
         st.subheader("Normal Plane")
         st.metric("Speed", stats_normal["Speed"])
         st.metric("Altitude", stats_normal["Altitude"])
-        st.image("images/comet.png", caption="Normal Plane")
+        # AJOUT DE use_container_width=True
+        st.image("images/comet.png", caption="De Havilland Comet DH-106", use_container_width=True)
+
 
 elif selection == "The Gothic Delta Wings":
     st.header(titre_ailes)
@@ -170,7 +176,7 @@ elif selection == "The Engines":
     col1, col2, col3 = st.columns(3)
     with col1:
         st.header(titre_moteurs)
-    st.write(texte_moteurs)
+        st.write(texte_moteurs)
     with col2:
         st.image("images/intakes.png")
     with col3:
@@ -219,10 +225,9 @@ elif selection == "Fuel Management":
     with c1:
         # Les "###" devant la variable transforment le texte en "Titre 3" (plus gros)
         st.markdown(f"### {texte_fuel}")
-        
+        st.image("images/Fuel.png")
     with c2:
         # use_container_width=True oblige l'image à s'étirer au maximum
-        st.image("images/Fuel.png")
         st.image("images/Fuel2.png",use_container_width=True)
 
 # --- NOUVELLE PAGE : THE END ---
