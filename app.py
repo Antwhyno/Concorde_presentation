@@ -132,17 +132,15 @@ elif selection == "The Supersonic Race":
         st.image("images/Tupolev Tu-144.jpg", caption="Tupolev Tu-144")    
     with col2:
         st.image("images/boeing-2707.jpg", caption="Boeing 2707")
-    with col3:
         st.image("images/Boeing 2707.jpeg", caption="Boeing 2707")
+    with col3:
         st.image("images/Tupolev Tu-144.webp", caption="Tupolev Tu-144")
         
         
 
 elif selection == "Key Numbers":
-    
     st.header(titre_chiffres)
-    st.markdown(f"## {texte_chiffres}")
-    #st.info(texte_chiffres)
+    st.info(texte_chiffres)
     st.image("images/5concordes.gif")
 
 elif selection == "Performance":
